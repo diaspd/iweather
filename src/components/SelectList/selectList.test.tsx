@@ -31,6 +31,6 @@ describe("Component: SelectList", () => {
     const selectedCity = screen.getByText(/porto/i) // || const selectedCity2 = screen.getByText('porto', {exact: false})
     fireEvent.press(selectedCity)
 
-    expect(onPress).toHaveBeenCalledTimes(1)
+    expect(onPress).toHaveBeenCalledWith(data[1])
   })
 })
