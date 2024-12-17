@@ -2,7 +2,7 @@ import { render, screen, fireEvent } from "@testing-library/react-native"
 import { SelectList } from "@components/SelectList";
 
 describe("Component: SelectList", () => {
-  it("Should be returned details of city selected.", () => {
+  it("should be returned details of city selected.", () => {
     const data = [
       {
         id: '1',
@@ -34,7 +34,7 @@ describe("Component: SelectList", () => {
     expect(onPress).toHaveBeenCalledWith(data[1])
   })
 
-  it("Should not be shown the options when data props is empty", () => {
+  it("should not be shown the options when data props is empty", () => {
     render(
       <SelectList 
         data={[]}
