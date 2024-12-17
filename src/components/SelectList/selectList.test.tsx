@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react-native"
+import { render, screen, fireEvent } from "@testing-library/react-native"
 import { SelectList } from "@components/SelectList";
 
 describe("Component: SelectList", () => {
@@ -17,16 +17,20 @@ describe("Component: SelectList", () => {
         longitude: 987
       }
     ]
+
+    const onPress = jest.fn()
     
     render(
       <SelectList
         data={data}
         onChange={() => {}}
-        onPress={() => {}}
+        onPress={onPress}
       />
     );
 
     const selectedCity = screen.getByText(/porto/i) // || const selectedCity2 = screen.getByText('porto', {exact: false})
-    console.log(selectedCity)
+    fireEvent.press(selectedCity)
+
+    expect(onPress).toHaveBeenCalledTimes(1)
   })
 })
