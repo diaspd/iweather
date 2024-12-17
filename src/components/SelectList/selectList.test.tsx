@@ -26,6 +26,7 @@ describe("Component: SelectList", () => {
       />
     );
 
-    const selectedCity = screen.getByText("Caçapava")
+    const selectedCity = screen.getByText(/porto/i) // || const selectedCity2 = screen.getByText('porto', {exact: false})
+    console.log(selectedCity)
   })
 })
