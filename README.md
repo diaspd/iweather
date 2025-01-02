@@ -40,6 +40,7 @@ $ npx expo start
 This project was developed with the following technologies:
 <b>
 - React Native
+- Expo
 </b>
 
 </br>
