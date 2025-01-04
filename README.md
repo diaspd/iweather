@@ -47,7 +47,7 @@ This project was developed with the following technologies:
 </br>
 
 ## 📄 Project
-💰 .
+💰 Project made to search how is the weather in other cities, and add test to components, features etc.
 
 <br></br>
 
