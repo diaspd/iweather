@@ -5,7 +5,7 @@ import { NextDays } from "@components/NextDays";
 import clearDay from '@assets/clear_day.svg'
 
 describe("Component: NextDays", () => {
-  it("should be abel to render day.", () => {
+  it("should be able to render day.", () => {
     render(
       <NextDays 
         data={[
