@@ -8,9 +8,7 @@ import { Dashboard } from "@screens/Dashboard"
 import { mockCityAPIResponse } from "@__tests__/mocks/api/mockCityAPIResponse"
 
 describe("Screen: Dashboard", () => {
-  it('should be able to show city weather.', async () => {
-    jest.spyOn(api, 'get').mockResolvedValue({ data: mockWeatherAPIResponse });
-
+  beforeAll(async () => {
     const city = {
       id: '1',
       name: 'Rio do Sul, BR',
@@ -19,6 +17,9 @@ describe("Screen: Dashboard", () => {
     }
 
     await saveStorageCity(city)
+  })
+  it('should be able to show city weather.', async () => {
+    jest.spyOn(api, 'get').mockResolvedValue({ data: mockWeatherAPIResponse });
     
     render(<Dashboard />)
 
@@ -27,15 +28,6 @@ describe("Screen: Dashboard", () => {
   })
 
   it("should be able to show another selected weather city.", async () => {
-    const city = {
-      id: '1',
-      name: 'Rio do Sul, BR',
-      latitude: 123,
-      longitude: 456
-    }
-
-    await saveStorageCity(city)
-    
     jest.spyOn(api, 'get')
       .mockResolvedValueOnce({ data: mockWeatherAPIResponse })
       .mockResolvedValueOnce({ data: mockCityAPIResponse })
@@ -55,7 +47,7 @@ describe("Screen: Dashboard", () => {
       await waitFor(() => act(() => {
         fireEvent.press(screen.getByText(cityName, { exact: false }))
       }))
-      
+
       expect(screen.getByText(cityName, { exact: false })).toBeTruthy()
   })
 })
