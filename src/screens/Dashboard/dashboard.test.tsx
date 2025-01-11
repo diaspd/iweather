@@ -1,5 +1,5 @@
 import { mockWeatherAPIResponse } from "@__tests__/mocks/api/mockWeatherAPIResponse"
-import { render, screen, waitFor, waitForElementToBeRemoved } from "@__tests__/utils/customRender"
+import { act, fireEvent, render, screen, waitFor, waitForElementToBeRemoved } from "@__tests__/utils/customRender"
 
 import { saveStorageCity } from "@libs/asyncStorage/cityStorage"
 
@@ -41,10 +41,21 @@ describe("Screen: Dashboard", () => {
       .mockResolvedValueOnce({ data: mockCityAPIResponse })
       .mockResolvedValueOnce({ data: mockWeatherAPIResponse })
 
-      const { debug } = render(<Dashboard />)
+      render(<Dashboard />)
       
       await waitForElementToBeRemoved(() => screen.queryByTestId('loading'))
 
-      debug()  
+      const cityName = 'São Paulo'
+
+      await waitFor(() => act(() => {
+        const search = screen.getByTestId('search-input')
+        fireEvent.changeText(search, cityName)
+      }))
+
+      await waitFor(() => act(() => {
+        fireEvent.press(screen.getByText(cityName, { exact: false }))
+      }))
+      
+      expect(screen.getByText(cityName, { exact: false })).toBeTruthy()
   })
 })
