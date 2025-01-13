@@ -5,7 +5,8 @@
 <div align="center">
   <b>
     <a href="#-Technologies"><b>Technologies</b></a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-    <a href="#-Project"><b>Project</b></a>&nbsp;&nbsp;&nbsp;
+    <a href="#-Project"><b>Project</b></a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+    <a href="#-Layout"><b>Layout</b></a>&nbsp;&nbsp;&nbsp;
   </b>  
 </div>
 
@@ -51,6 +52,10 @@ This project was developed with the following technologies:
 
 <br></br>
 
+## 🔖 Layout
+- [I weather - Figma](https://www.figma.com/community/file/1266100010412948063)
+
+<br></br>
 
 Made with ♥ by Pedro Dias. 👋 Follow me on social media! </br>
 
