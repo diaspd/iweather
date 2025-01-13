@@ -53,7 +53,7 @@ This project was developed with the following technologies:
 <br></br>
 
 ## 🔖 Layout
-- [ - Figma]()
+- [I weather - Figma](https://www.figma.com/community/file/1266100010412948063)
 
 <br></br>
 
