@@ -34,6 +34,8 @@ $ npm install
 $ npx expo start 
 ```
 
+`Don't forget to change the "env.exaple" file`
+
 </br>
 
 ## 💻 Technologies
