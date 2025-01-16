@@ -13,7 +13,8 @@
 ---
 
 <div align="center">
-   <img alt="project gif" title="project gif" src="./src/assets/" width="35%" />
+  <img alt="project img" title="project img" src="./src/assets/" width="65%" />
+  <img alt="project gif" title="project gif" src="./src/assets/" width="35%" />
 </div> 
 
 </br>
