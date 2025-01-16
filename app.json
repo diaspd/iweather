@@ -21,7 +21,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#13131A"
-      }
+      },
+      "package": "com.diaspd.iweather"
     },
     "web": {
       "favicon": "./assets/favicon.png"
