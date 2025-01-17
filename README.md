@@ -13,7 +13,8 @@
 ---
 
 <div align="center">
-   <img alt="project gif" title="project gif" src="./src/assets/" width="35%" />
+  <img alt="project img" title="project img" src="./src/assets/" width="65%" />
+  <img alt="project gif" title="project gif" src="./src/assets/" width="35%" />
 </div> 
 
 </br>
@@ -34,6 +35,8 @@ $ npm install
 $ npx expo start 
 ```
 
+`Don't forget to change the "env.exaple" file`
+
 </br>
 
 ## 💻 Technologies
@@ -48,7 +51,7 @@ This project was developed with the following technologies:
 </br>
 
 ## 📄 Project
-💰 Project made to search how is the weather in other cities, and add test to components, features etc.
+💰 Project made to search how is the weather in other towns, cities or countries, and add test to components, features etc.
 
 <br></br>
 
