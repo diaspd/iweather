@@ -8,6 +8,9 @@
       "android": {
         "distribution": "internal"
       },
+      "ios": {
+        "simulator": true
+      },
       "env": {
        "EXPO_PUBLIC_WEATHER_APP_ID": "a6ed5cf2f4fd533e0a6b25723c97799d"
       }
