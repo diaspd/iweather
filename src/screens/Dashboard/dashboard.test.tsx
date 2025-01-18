@@ -14,9 +14,7 @@ describe("Screen: Dashboard", () => {
       longitude: 456
     }
 
-    act(async () => {
-      await saveStorageCity(city)
-    })
+    await saveStorageCity(city)
   })
 
   it('should be show city weather', async () => {
