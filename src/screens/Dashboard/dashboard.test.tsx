@@ -6,7 +6,6 @@ import { saveStorageCity } from "@libs/asyncStorage/cityStorage"
 import { mockCityAPIResponse } from "@__tests__/mocks/api/mockCityAPIResponse"
 
 describe("Screen: Dashboard", () => {
-
   beforeAll(async () => {
     const city = {
       id: '1',
@@ -15,7 +14,9 @@ describe("Screen: Dashboard", () => {
       longitude: 456
     }
 
-    await saveStorageCity(city)
+    act(async () => {
+      await saveStorageCity(city)
+    })
   })
 
   it('should be show city weather', async () => {
