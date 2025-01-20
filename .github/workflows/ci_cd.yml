@@ -17,18 +17,25 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
-          node-version: 18.x
+          node-version: 16.x
+
+      - name: Cache Node modules
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
 
       - name: Install dependencies
         run: npm install
 
       - name: Run Tests
         run: npm test
-  
-  CD: 
+
+  CD:
     name: Continuous Delivery
     runs-on: ubuntu-latest
-
     needs: CI
 
     steps:
@@ -38,7 +45,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
-          node-version: 18.x
+          node-version: 16.x
 
       - name: Setup EAS
         uses: expo/expo-github-action@v8
@@ -47,5 +54,16 @@ jobs:
           packager: npm
           token: ${{ secrets.EAS_EXPO_TOKEN }}
 
-      - name: Build
-        run: eas build --platform android --profile preview --non-interactive --no-wait
+      - name: Validate Expo Config
+        run: expo config
+
+      - name: Setup Java
+        uses: actions/setup-java@v3
+        with:
+          java-version: 11
+
+      - name: Increase Memory for Gradle
+        run: echo "org.gradle.jvmargs=-Xmx4g -XX:MaxPermSize=512m -XX:+HeapDumpOnOutOfMemoryError" >> ~/.gradle/gradle.properties
+
+      - name: Build with EAS
+        run: eas build --platform android --profile preview --non-interactive --verbose
