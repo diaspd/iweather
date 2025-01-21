@@ -46,6 +46,7 @@ This project was developed with the following technologies:
 - React Native
 - Expo
 - Jest
+- EAS
 </b>
 
 </br>
