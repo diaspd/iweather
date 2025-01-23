@@ -47,6 +47,7 @@ This project was developed with the following technologies:
 - Expo
 - Jest
 - EAS
+- CI / CD
 </b>
 
 </br>
